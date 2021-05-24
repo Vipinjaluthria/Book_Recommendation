@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_books">
+
+    <fragment
+        android:id="@+id/navigation_books"
+        android:name="com.example.plutoacademy.view.ui.books.BooksFragment"
+        android:label="@string/title_books"
+        tools:layout="@layout/fragment_books" />
+
+    <fragment
+        android:id="@+id/navigation_experts"
+        android:name="com.example.plutoacademy.view.ui.experts.ExpertsFragment"
+        android:label="@string/title_experts"
+        tools:layout="@layout/fragment_experts" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.example.plutoacademy.view.ui.about.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>

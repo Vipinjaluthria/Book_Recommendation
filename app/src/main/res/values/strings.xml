@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">plutoacademy</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_books">Books</string>
+    <string name="title_experts">Experts</string>
+    <string name="title_about">About</string>
+
+    <string name="content_description_media">Article Image</string>
+    <string name="job_success">StringsFile</string>
+
+    <string name="my_desc">Kunal Shah is an Indian entrepreneur, founder of CRED, founder and ex-CEO of FreeCharge.Shah founded FreeCharge in 2010, along with Sandeep Tandon, seeing the potential of online recharging in a growing market. In April 2015, FreeCharge was acquired by Snapdeal for an estimated amount of $400 million.Shah was appointed as the new CEO of the company. Kunal also led the acquisitions of Wishberg and Preburn in 2014.Shah is an active angel investor in a number of startups such as Innov8, Spinny, Zepo, Unacademy, and Bharat Bazaar.</string>
+    <string name="app_description">Learn from people you can trust.\nA collection of huge resources, videos, books, documentary, courses, etc. curated by experts around the world.</string>
+    <string name="contact_us">"Mayank Dubey\n+91 9812983019\nmayankdubey21@gmail.com"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_books_recommender">BooksRecommenderActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+
+    <string name="source_underline"><u>Source</u></string>
+</resources>

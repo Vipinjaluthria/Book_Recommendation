@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="books"
+            type="com.example.plutoacademy.service.model.books.Books" />
+
+        <variable
+            name="callback"
+            type="com.example.plutoacademy.view.callback.books.OnClickBooksCallback" />
+
+    </data>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/item_horizontal_margin"-->
+<!--        android:layout_marginEnd="@dimen/item_horizontal_margin"-->
+<!--        android:onClick="@{(v) ->  callback.onClick(v,article)}"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:cardUseCompatPadding="true">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/item_horizontal_margin"-->
+<!--            android:layout_marginEnd="@dimen/item_horizontal_margin"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="5dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/title"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:contentDescription="@string/app_name"-->
+<!--                android:text="@{article.title}"-->
+<!--                android:textSize="@dimen/news_text"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/author"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@{article.author}"-->
+<!--                android:textSize="@dimen/news_text" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/source"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@{article.description}"-->
+<!--                android:textSize="@dimen/news_text" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/publishedAt"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="@dimen/news_text"-->
+<!--                app:dateText="@{article.publishedAt}" />-->
+<!--        </LinearLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/yellow"
+                android:layout_gravity="center"
+                android:onClick="@{(v) ->  callback.showRecommenders(v, books)}"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="6sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="2sp"
+                    android:text="@{String.valueOf(books.recommenders.size())}"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="6sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="2sp"
+                    android:text=" Recommenders"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            </LinearLayout>
+
+            <!-- Media -->
+
+            <com.example.plutoacademy.view.util.MyImageView
+                android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/content_description_media"
+                android:scaleType="fitCenter"
+                android:onClick="@{(v) ->  callback.onClick(v,books)}"
+                app:srcCompat="@drawable/ic_books_black_24dp"
+                app:url="@{books.mainImage}"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{books.title}"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{books.author}"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
